@@ -2,7 +2,7 @@ section	.data
     huruf db 01000001b, 00001010b
 section	.text
 	global _start 
-_start
+_start:
     mov ecx, huruf
     mov edx, 2 
     mov ebx, 1 
