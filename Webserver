@@ -2,13 +2,15 @@ web server dijalankan di port 8080 (server.java)
 jalankan httpprotocoljava, void handle request untuk mengecuk apakah ada request dari browser
 jika string yg ditangkap length=0 maka throw new IOexception("Kosong "Bro")
 pengecekan ekstensi file-nya jenis HTML atau PHP
-jika PHP maka jalankan procedure_callPHP
+jika PHP maka jalankan private_callPHP
 
-jika string yg ditangkap "GET" maka parse request dengan penambahan string data
-jika string yg ditangkap "POST" maka parse request dengan penambahan string data
+jika string method="GET" maka parse request dengan penambahan string data
+jika string method="POST" maka parse request dengan penambahan string data
 
 private call_PHP
  IF lenght String>0 maka status 200"OK"
+ 	jalankan script bridge.php
+	String command = "php bridge.php"+" --target="+filePath+"--method="+method+params;
   else "500" internal server error
 
 private get_file_path
